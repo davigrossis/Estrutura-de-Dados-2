@@ -14,7 +14,8 @@ private:
 public:
     MinHeap();              
     void insert(int value); 
-    void print();           
+    void print();
+    void select(int value);
 };
 
 #endif

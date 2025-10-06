@@ -36,3 +36,19 @@ void MaxHeap::print() {
     }
     cout << " ]" << endl;
 }
+
+void MaxHeap::select(int value) {
+    int i = value;
+    if(size == 0){
+        cout << "O heap esta vazio, insira valores na heap antes" << endl;
+    }
+    else if(i < 0){
+        cout << "Esse valor e invalido , digite um valor maior ou igual a 0" << endl;
+    }
+    else if(i >= size){
+        cout << "Esse valor e invalido pois nao existe essa posicao na heap, retorne um valor entre o intervalo de 0 e " << size - 1 << endl;
+    }
+    else{
+        cout << "O valor da posicao selecionada e: " << heap[i] << endl;
+    }
+}

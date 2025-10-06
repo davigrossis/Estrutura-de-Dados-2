@@ -20,7 +20,8 @@ int main() {
             cout << "Digite qual operacao deseja realizar" << endl;
             cout << "[ 1 ] - Inserir valores na Min-Heap" << endl;
             cout << "[ 2 ] - Imprimir Heap" << endl;
-            cout << "[ 3 ] - Sair" << endl;
+            cout << "[ 3 ] - Selecionar valor de uma posicao" << endl;
+            cout << "[ 4 ] - Sair" << endl;
             cout << "==================================================" << endl << endl;
 
             int op;
@@ -39,7 +40,13 @@ int main() {
             {
                 heapmin.print();
             }
-            if(op == 3){
+            if (op == 3){
+                cout << "Digite a posicao que deseja selecionar" << endl;
+                int value;
+                cin >> value;
+                heapmin.select(value);
+            }
+            if(op == 4){
                 break;
             }
         }            
@@ -49,7 +56,8 @@ int main() {
             cout << "Digite qual operacao deseja realizar" << endl;
             cout << "[ 1 ] - Inserir valores na Max-Heap" << endl;
             cout << "[ 2 ] - Imprimir Heap" << endl;
-            cout << "[ 3 ] - Sair" << endl;
+            cout << "[ 3 ] - Selecionar valor de uma posicao" << endl;
+            cout << "[ 4 ] - Sair" << endl;
             cout << "==================================================" << endl << endl;
 
             int op;
@@ -68,6 +76,12 @@ int main() {
                 heapmax.print();
             }
             if (op == 3){
+                cout << "Digite a posicao que deseja selecionar" << endl;
+                int value;
+                cin >> value;
+                heapmax.select(value);
+            }
+            if(op == 4){
                 break;
             }
         }
