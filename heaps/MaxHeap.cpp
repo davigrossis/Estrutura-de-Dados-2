@@ -51,4 +51,33 @@ void MaxHeap::select(int value) {
     else{
         cout << "O valor da posicao selecionada e: " << heap[i] << endl;
     }
+    
+    
+}
+
+void MaxHeap::remove(int heap[], int size) {
+        if( size < 1 ){
+            cout << "Heap vazio";
+        }
+        troca(heap[0], heap[size - 1]);
+        size--;
+        down( heap, 0, size);
+        
+}
+
+void MaxHeap::down(int heap[], int value, int size){
+    int l = left(value);
+    int r = right(value);
+    int maior = value;
+    if( l <= size && heap[l] > heap[maior]){
+        maior = l;
+    }
+    if(r <= size && heap[r] > heap[maior]){
+        maior = r;
+    }
+    if(maior != value){
+        troca(heap[maior], heap[value]);
+        down(heap , maior, size);
+    }
+    
 }
