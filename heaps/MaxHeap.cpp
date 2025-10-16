@@ -18,13 +18,9 @@ void MaxHeap::change(int &a, int &b) {
 
 void MaxHeap::insert(int value) {
     this->heap[this->size] = value;
-    int i = this->size;
     this->size++;
-
-    while (i > 0 && this->heap[parent(i)] < this->heap[i]) {
-        change(this->heap[parent(i)], this->heap[i]);
-        i = parent(i);
-    }
+    
+    up(this->heap, this->size - 1);
 }
 
 void MaxHeap::print() {
