@@ -81,3 +81,23 @@ void MaxHeap::down(int heap[], int value, int size){
     }
     
 }
+
+void MaxHeap::up(int heap[], int value){
+    int p = parent(value);
+    if(p >= 1){
+        if(heap[value] > heap[p]){
+            troca(heap[value],heap[p]);
+            up(heap,p);
+        }
+    }    
+}
+
+//Dado o arranjo A e nó na posição i
+// procedimento subir(A,i)
+// p = Pai(i)
+// Se (p >= 1 ) Então
+//    Se A[i] > A[p] Então
+//         troca(A[i],A[p])
+//         subir(A,p)
+//    Fim-Se
+// Fim-Se
