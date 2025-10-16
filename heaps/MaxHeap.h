@@ -9,7 +9,7 @@ private:
     int parent(int i);
     int left(int i);
     int right(int i);
-    void troca(int &a, int &b);
+    void change(int &a, int &b);
 
 public:
     MaxHeap();              
