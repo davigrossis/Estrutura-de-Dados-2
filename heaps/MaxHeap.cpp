@@ -6,7 +6,6 @@ MaxHeap::MaxHeap() {
     size = 0;
 }
 
-
 int MaxHeap::parent(int i) { return (i - 1) / 2; }
 int MaxHeap::left(int i) { return 2 * i + 1; }
 int MaxHeap::right(int i) { return 2 * i + 2; }
@@ -39,48 +38,45 @@ void MaxHeap::print() {
 
 void MaxHeap::select(int value) {
     int i = value;
-    if(size == 0){
+    if (size == 0) {
         cout << "O heap esta vazio, insira valores na heap antes" << endl;
-    }
-    else if(i < 0){
+    } else if (i < 0) {
         cout << "Esse valor e invalido , digite um valor maior ou igual a 0" << endl;
-    }
-    else if(i >= size){
+    } else if (i >= size) {
         cout << "Esse valor e invalido pois nao existe essa posicao na heap, retorne um valor entre o intervalo de 0 e " << size - 1 << endl;
-    }
-    else{
+    } else {
         cout << "O valor da posicao selecionada e: " << heap[i] << endl;
     }
-    
-    
 }
 
-void MaxHeap::remove(int heap[], int size) {
-        if( size < 1 ){
-            cout << "Heap vazio";
-        }
-        troca(heap[0], heap[size - 1]);
-        size--;
-        down( heap, 0, size);
-        
+void MaxHeap::remove() {
+    if (size < 1) {
+        cout << "Heap vazio" << endl;
+        return;
+    }
+
+    troca(heap[0], heap[size - 1]);
+    size--;
+    down(heap, 0, size);
 }
 
-void MaxHeap::down(int heap[], int value, int size){
+void MaxHeap::down(int heap[], int value, int size) {
     int l = left(value);
     int r = right(value);
     int maior = value;
-    if( l <= size && heap[l] > heap[maior]){
+
+    if (l < size && heap[l] > heap[maior])
         maior = l;
-    }
-    if(r <= size && heap[r] > heap[maior]){
+
+    if (r < size && heap[r] > heap[maior])
         maior = r;
-    }
-    if(maior != value){
+
+    if (maior != value) {
         troca(heap[maior], heap[value]);
-        down(heap , maior, size);
+        down(heap, maior, size);
     }
-    
 }
+
 
 void MaxHeap::up(int heap[], int value){
     int p = parent(value);

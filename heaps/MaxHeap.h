@@ -16,7 +16,7 @@ public:
     void insert(int value); 
     void print();   
     void select(int value);        
-    void remove(int heap[], int size);
+    void remove();
     void down(int heap[], int value, int size);
     void up(int heap[], int value);
 
