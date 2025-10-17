@@ -9,13 +9,14 @@ private:
     int parent(int i);
     int left(int i);
     int right(int i);
-    void troca(int &a, int &b);
+    void change(int &a, int &b);
 
 public:
     MinHeap();              
     void insert(int value); 
     void print();
     void select(int value);
+    void down(int heap[], int value, int size);
 };
 
 #endif
