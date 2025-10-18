@@ -69,3 +69,13 @@ void MinHeap::down(int heap[], int value, int size) {
         down(heap, menor, size);
     }
 }
+
+void MinHeap::up(int heap[], int value){
+    if(value > 0) {
+        int p = parent(value);
+        if(heap[value] < heap[p]){
+            change(heap[value], heap[p]);
+            up(heap, p);
+        }
+    }    
+}

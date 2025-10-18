@@ -17,6 +17,7 @@ public:
     void print();
     void select(int value);
     void down(int heap[], int value, int size);
+    void up(int heap[], int value);
 };
 
 #endif
