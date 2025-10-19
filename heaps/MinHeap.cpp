@@ -53,6 +53,20 @@ void MinHeap::select(int value) {
     }
 }
 
+void MinHeap::remove() {
+    if (this->size < 1) {
+        cout << "Heap vazio" << endl;
+        return;
+    }
+
+    change(this->heap[0], this->heap[this->size - 1]);
+    this->size--;
+    
+    if (this->size > 0) {
+        down(this->heap, 0, this->size);
+    }
+}
+
 void MinHeap::down(int heap[], int value, int size) {
     int l = left(value);
     int r = right(value);
