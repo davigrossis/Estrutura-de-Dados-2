@@ -18,14 +18,10 @@ void MinHeap::change(int &a, int &b) {
 }
 
 void MinHeap::insert(int value) {
-    heap[size] = value;
-    int i = size;
-    size++;
-
-    while (i > 0 && heap[parent(i)] > heap[i]) {
-        change(heap[parent(i)], heap[i]);
-        i = parent(i);
-    }
+    this->heap[this->size] = value;
+    this->size++;
+    
+    up(this->heap, this->size - 1);
 }
 
 void MinHeap::print() {
